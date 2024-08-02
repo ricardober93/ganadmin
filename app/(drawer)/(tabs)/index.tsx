@@ -1,12 +1,10 @@
-import { Image, StyleSheet, Platform } from "react-native";
-
-import ParallaxScrollView from "@/components/ParallaxScrollView";
+import ContainerView from "@/components/ContainerView";
 import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
-import { Link } from "expo-router";
-import ContainerView from "@/components/ContainerView";
-import Drawer from "expo-router/drawer";
 import { DrawerToggleButton } from "@react-navigation/drawer";
+import { Link } from "expo-router";
+import Drawer from "expo-router/drawer";
+import { StyleSheet } from "react-native";
 export default function HomeScreen() {
 
 
@@ -14,7 +12,7 @@ export default function HomeScreen() {
     <ContainerView>
       <Drawer.Screen
         options={{
-          title: "Ganadimn",             // <== NEW EDIT HERE
+          title: "GanAdmin",             // <== NEW EDIT HERE
           headerShown: true,
           headerLeft: () => <DrawerToggleButton />,
         }}
