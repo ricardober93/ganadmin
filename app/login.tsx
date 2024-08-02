@@ -3,13 +3,20 @@ import { StyleSheet } from "react-native";
 import ContainerView from "@/components/ContainerView";
 import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
-import { Link, Stack } from "expo-router";
+import { Link, Stack, useRouter } from "expo-router";
 import { useState } from "react";
 import { TextInput, Button } from "react-native-paper";
 
 export default function LoginScreen() {
+  const router = useRouter();
+
   const [text, setText] = useState("");
   const [password, SetPassword] = useState("");
+
+  const login = () => {
+    
+    router.push("/");
+  }
   return (
     <ContainerView>
       <Stack.Screen
@@ -48,7 +55,7 @@ export default function LoginScreen() {
       <Button
         icon="login"
         mode="contained"
-        onPress={() => console.log(`auth ${text} ${password}`)}>
+        onPress={login}>
         Entrar
       </Button>
       <ThemedText

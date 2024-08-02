@@ -21,8 +21,8 @@ export default function VerificationCode() {
   };
 
   const handleVerifyCode = () => {
+    router.push("/reset-password");
     console.log(verificationCode);
-    router.push("/");
   };
 
   const handleResendCode = () => {
@@ -94,10 +94,11 @@ const styles = StyleSheet.create({
   },
   formContainer: {
     width: "100%",
-    marginTop: 16,
+    marginTop: 32,
     display: "flex",
     flexDirection: "row",
-    justifyContent: "space-between",
+    justifyContent: "center",
+    gap: 16,
     marginBottom: 16,
   },
   input: {

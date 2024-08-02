@@ -32,6 +32,12 @@ export default function RootLayout() {
     <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
       <PaperProvider>
         <Stack>
+        <Stack.Screen
+            name="modal"
+            options={{
+              presentation: "modal",
+            }}
+          />
           <Stack.Screen
             name="(tabs)"
             options={{ headerShown: false }}
