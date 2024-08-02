@@ -39,7 +39,7 @@ export default function RootLayout() {
             }}
           />
           <Stack.Screen
-            name="(tabs)"
+            name="(drawer)"
             options={{ headerShown: false }}
           />
           <Stack.Screen name="+not-found" />
