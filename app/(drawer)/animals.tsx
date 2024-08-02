@@ -1,15 +1,11 @@
-import { Image, StyleSheet, Platform } from "react-native";
+import { StyleSheet, View } from "react-native";
 
-import ParallaxScrollView from "@/components/ParallaxScrollView";
-import { ThemedText } from "@/components/ThemedText";
-import { ThemedView } from "@/components/ThemedView";
-import { Link } from "expo-router";
 import ContainerView from "@/components/ContainerView";
-import Drawer from "expo-router/drawer";
-import { DrawerToggleButton } from "@react-navigation/drawer";
-import { Avatar, Button, Card, Chip, Divider, IconButton, Menu, Text } from "react-native-paper";
-import { useState } from "react";
 import { ThemedDotsVertical } from "@/components/ThemedDotsVertical";
+import { ThemedView } from "@/components/ThemedView";
+import { DrawerToggleButton } from "@react-navigation/drawer";
+import Drawer from "expo-router/drawer";
+import { Avatar, Card, Chip, MD2Colors } from "react-native-paper";
 
 const LeftContent = (props: any) => (
   <Avatar.Icon
@@ -19,8 +15,6 @@ const LeftContent = (props: any) => (
 );
 
 export default function AnimalsScreen() {
-
-
   return (
     <ContainerView>
       <Drawer.Screen
@@ -37,11 +31,23 @@ export default function AnimalsScreen() {
               title={i + 1}
               subtitle="Marcelanita"
               left={LeftContent}
-              right={() => <ThemedDotsVertical /> }
-              
+              right={() => <ThemedDotsVertical />}
             />
             <Card.Content>
-              <Chip style={styles.chip} icon="information">Becerra</Chip>
+              <View>
+                <Chip
+                  style={styles.chip}
+                  icon="information">
+                  Becerra
+                </Chip>
+                <Chip
+                  style={[styles.chipBadge, styles.green]}
+                  onPress={() => console.log("Pressed")}
+                  compact
+                  theme={{ colors: { primary: "green" } }}>
+                  Inventariada
+                </Chip>
+              </View>
             </Card.Content>
           </Card>
         ))}
@@ -57,8 +63,16 @@ const styles = StyleSheet.create({
     gap: 8,
   },
   chip: {
-    width:"auto",
+    width: "auto",
     maxWidth: 120,
+  },
+  chipBadge: {
+    position: "absolute",
+    right: -16,
+    bottom: -16,
+  },
+  green: {
+    backgroundColor: MD2Colors.green100,
   },
   contentContainer: {
     flex: 1,
