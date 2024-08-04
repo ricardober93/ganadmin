@@ -14,7 +14,7 @@ export default function DrawerLayout() {
         }}
       />
         <Drawer.Screen
-        name="animals"
+        name="(animals)"
         options={{
           drawerLabel: "Aniamles",
         }}

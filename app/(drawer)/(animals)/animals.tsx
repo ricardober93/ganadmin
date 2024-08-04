@@ -6,6 +6,7 @@ import { ThemedCard } from "@/components/ThemedCard";
 import { ThemedView } from "@/components/ThemedView";
 import { DrawerToggleButton } from "@react-navigation/drawer";
 import Drawer from "expo-router/drawer";
+import { IconButton } from "react-native-paper";
 
 export default function AnimalsScreen() {
   return (
@@ -15,6 +16,8 @@ export default function AnimalsScreen() {
           title: "Animales", // <== NEW EDIT HERE
           headerShown: true,
           headerLeft: () => <DrawerToggleButton />,
+          headerTitleAlign: "center",
+          headerRight: () => <IconButton icon="plus"></IconButton>,
         }}
       />
       <ThemedView style={styles.animalesContainer}>
