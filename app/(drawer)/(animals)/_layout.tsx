@@ -38,6 +38,12 @@ export default function TabLayout() {
           ),
         }}
       />
+       <Tabs.Screen
+        name="create_animals"
+        options={{
+         href:null
+        }}
+      />
     </Tabs>
    
   );
